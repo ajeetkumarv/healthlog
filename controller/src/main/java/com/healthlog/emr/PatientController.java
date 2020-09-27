@@ -15,6 +15,7 @@ import com.healthlog.emr.model.Patient;
 
 @Controller
 @RequestMapping("/patient")
+@Deprecated
 public class PatientController {
 	
 	@Autowired
