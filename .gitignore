@@ -6,3 +6,4 @@ domain/target/
 repository/target/
 service/target/
 ui/node_modules/
+ui/src/main/web/node/
