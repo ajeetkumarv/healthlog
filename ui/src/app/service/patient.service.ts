@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs'
 import { HttpClient } from '@angular/common/http';
+import { Patient } from 'src/app/Patient';
 
 @Injectable({
   providedIn: 'root'
@@ -13,4 +14,9 @@ export class PatientService {
   getPatientList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
+  createPatient(patient: Patient): Observable<Object> {
+	return this.http.post(`${this.baseUrl}`, patient);
+  }
+
 }

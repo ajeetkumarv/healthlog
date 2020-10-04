@@ -24,11 +24,12 @@
 	</properties>
 
 	<modules>
-		<module>application</module>
-		<module>controller</module>
 		<module>domain</module>
+		<module>controller</module>
 		<module>repository</module>
 		<module>service</module>
+		<module>application</module>
+		<module>ui</module>
 	</modules>
 	
 	<dependencies>
