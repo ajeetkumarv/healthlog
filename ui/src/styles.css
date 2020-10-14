@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@fullcalendar/common/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+
+html,
+body,
+body > * {
+
+    padding: 1;
+    height: 100;
+}
+.fc .fc-daygrid-day, .fc .fc-timegrid-slot {
+    cursor: pointer;
+}
