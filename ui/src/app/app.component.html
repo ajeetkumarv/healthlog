@@ -24,9 +24,9 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown">Administration</a>
       <div class="dropdown-menu">
-        <a routerLink="patients" class="dropdown-item" >Facilities</a>
-        <a routerLink="addPatient" class="dropdown-item" >User</a>
-        <a routerLink="addPatient" class="dropdown-item" >Addr book</a>
+        <a routerLink="facility" class="dropdown-item" >Facilities</a>
+        <a routerLink="user" class="dropdown-item" >User</a>
+        <a routerLink="addrbook" class="dropdown-item" >Addr book</a>
       </div>
     </li>
     <li class="nav-item">
@@ -63,14 +63,7 @@
 </div>
 
 <div class="container">
-  <br>
-  <h2 style="text-align: center;">{{title}}</h2>
-  <hr>  
-  <div class="card">
-    <div class="card-body">
   <router-outlet></router-outlet>
-    </div>
-  </div>
 </div>
 
 <footer class="footer">

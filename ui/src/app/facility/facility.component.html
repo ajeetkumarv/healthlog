@@ -1,0 +1,101 @@
+<h3>Facilities</h3>
+<hr>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#facilityModal">Add Facility</button>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let facility of facilities | async ">
+            <td>{{facility.name}}</td>
+            <td>{{facility.address}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- The Modal -->
+<div class="modal fade" id="facilityModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form>
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3 class="modal-title">Add Facility</h3>
+                
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row  mb-2">
+                    <div class="col-lg-2">Name</div>
+                    <div class="col-lg-4">
+                        <input type="email" class="form-control input-sm" placeholder="Enter name" id="facilityName" />
+                    </div>
+                    <div class="col-lg-2">Phone</div>
+                    <div class="col-lg-4">
+                        <input type="number" class="form-control" placeholder="Enter phone" id="phoneNo" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-lg-2">Address</div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control input-sm" placeholder="address" id="facilityName" />
+                    </div>
+                    <div class="col-lg-2">Zip</div>
+                    <div class="col-lg-4">
+                        <input type="number" class="form-control" placeholder="Zip code" id="zip" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-lg-2">City</div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control input-sm" placeholder="city" id="facilityName" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-lg-2">State</div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control input-sm" placeholder="state" id="facilityName" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-lg-2">Country</div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control input-sm" placeholder="country" id="facilityName" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-lg-2">Website</div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control input-sm" placeholder="website" id="website" />
+                    </div>
+                    <div class="col-lg-2">Email</div>
+                    <div class="col-lg-4">
+                        <input type="email" class="form-control" placeholder="email" id="email" />
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                * Required
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+        </div>
+    </div>
+</div>

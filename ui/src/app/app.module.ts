@@ -13,6 +13,9 @@ import { PatientlistComponent } from './patient/patientlist/patientlist.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 import { CalendarComponent } from './calendar/calendar.component';
+import { FacilityComponent } from './facility/facility.component';
+import { UserComponent } from './user/user.component';
+import { AddrBookComponent } from './addr-book/addr-book.component';
 
 
 
@@ -28,7 +31,10 @@ FullCalendarModule.registerPlugins([
     AddPatientComponent,
     PatientDetailComponent,
     PatientlistComponent,
-	CalendarComponent
+	CalendarComponent,
+	FacilityComponent,
+	UserComponent,
+	AddrBookComponent
   ],
   imports: [
     BrowserModule,
