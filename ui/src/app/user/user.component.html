@@ -5,10 +5,22 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Address</th>
+            <th>Username</th>
+            <th>Phone</th>
+            <th>Facility</th>
+            <th>Speciality</th>
+            <th>Role</th>
+            <th>Licence No</th>
         </tr>
     </thead>
+        <tr *ngFor="let user of users | async">
+            <td>{{user.username}</td>
+            <td>{{user.phone}</td>
+            <td>{{user.facility}</td>
+            <td>{{user.speciality}</td>
+            <td>{{user.role}</td>
+            <td>{{user.licenceNo}</td>
+        </tr>
     <tbody>
     </tbody>
 </table>
@@ -28,56 +40,35 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="row  mb-2">
-                    <div class="col-lg-2">Name</div>
+                    <div class="col-lg-2">Username</div>
                     <div class="col-lg-4">
-                        <input type="email" class="form-control input-sm" placeholder="Enter name" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="username" id="username" />
                     </div>
                     <div class="col-lg-2">Phone</div>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="Enter phone" id="phoneNo" />
+                        <input type="number" class="form-control" placeholder="phone" id="phoneNo" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col-lg-2">Address</div>
+                    <div class="col-lg-2">Facility</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="address" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="facility" id="facility" />
                     </div>
-                    <div class="col-lg-2">Zip</div>
+                    <div class="col-lg-2">Speciality</div>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="Zip code" id="zip" />
-                    </div>
-                </div>
-
-                <div class="row mb-2">
-                    <div class="col-lg-2">City</div>
-                    <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="city" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="speciality" id="speciality" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col-lg-2">State</div>
+                    <div class="col-lg-2">Licence No</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="state" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="license" id="licence" />
                     </div>
-                </div>
-
-                <div class="row mb-2">
-                    <div class="col-lg-2">Country</div>
+                    <div class="col-lg-2">Role</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="country" id="facilityName" />
-                    </div>
-                </div>
-
-                <div class="row mb-2">
-                    <div class="col-lg-2">Website</div>
-                    <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="website" id="website" />
-                    </div>
-                    <div class="col-lg-2">Email</div>
-                    <div class="col-lg-4">
-                        <input type="email" class="form-control" placeholder="email" id="email" />
+                        <input type="text" class="form-control input-sm" placeholder="role" id="role" />
                     </div>
                 </div>
 

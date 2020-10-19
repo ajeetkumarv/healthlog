@@ -5,10 +5,22 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Username</th>
             <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Country</th>
         </tr>
     </thead>
+        <tr *ngFor="let addr of addresses | async">
+            <td>{{addr.username}}</td>
+            <td>{{addr.address}}</td>
+            <td>{{addr.city}}</td>
+            <td>{{addr.state}}</td>
+            <td>{{addr.zip}}</td>
+            <td>{{addr.country}}</td>
+        </tr>
     <tbody>
     </tbody>
 </table>
@@ -28,31 +40,24 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="row  mb-2">
-                    <div class="col-lg-2">Name</div>
+                    <div class="col-lg-2">Username</div>
                     <div class="col-lg-4">
-                        <input type="email" class="form-control input-sm" placeholder="Enter name" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="username" id="username" />
                     </div>
-                    <div class="col-lg-2">Phone</div>
+                    <div class="col-lg-2">Address type</div>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="Enter phone" id="phoneNo" />
+                        <input type="text" class="form-control" placeholder="address type" id="addrType" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">Address</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="address" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="address" id="address" />
                     </div>
-                    <div class="col-lg-2">Zip</div>
-                    <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="Zip code" id="zip" />
-                    </div>
-                </div>
-
-                <div class="row mb-2">
                     <div class="col-lg-2">City</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="city" id="facilityName" />
+                        <input type="city" class="form-control" placeholder="city" id="city" />
                     </div>
                 </div>
 
@@ -61,25 +66,19 @@
                     <div class="col-lg-4">
                         <input type="text" class="form-control input-sm" placeholder="state" id="facilityName" />
                     </div>
-                </div>
-
-                <div class="row mb-2">
                     <div class="col-lg-2">Country</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="country" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="country" id="country" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col-lg-2">Website</div>
+                    <div class="col-lg-2">Zip</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="website" id="website" />
-                    </div>
-                    <div class="col-lg-2">Email</div>
-                    <div class="col-lg-4">
-                        <input type="email" class="form-control" placeholder="email" id="email" />
+                        <input type="text" class="form-control input-sm" placeholder="zip" id="zip" />
                     </div>
                 </div>
+
 
             </div>
 

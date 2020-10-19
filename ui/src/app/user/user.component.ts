@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserService } from '../service/user.service';
+import { User } from '../User';
 
 @Component({
   selector: 'user',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  users : Observable<User[]>
+
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.users = this.userService.getUsers();
   }
 
 }
