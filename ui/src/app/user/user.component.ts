@@ -22,5 +22,6 @@ export class UserComponent implements OnInit {
   reloadData() {
     this.users = this.userService.getUsers();
   }
+  //test
 
 }
