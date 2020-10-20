@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FacilityService {
-  private getUrl = 'http://localhost:8080/facilities';
-  private postUrl = 'http://localhost:8080/createfacility';
+  private getUrl = 'http://localhost:8080/facility/all';
+  private postUrl = 'http://localhost:8080/facility/create';
   constructor(private http: HttpClient) { }
 
   getFacilities(): Observable<any> {

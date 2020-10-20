@@ -8,8 +8,8 @@ import { User } from 'src/app/User';
 })
 export class UserService {
 
-  private getUrl = 'http://localhost:8080/users';
-  private postUrl = 'http://localhost:8080/createuser';
+  private getUrl = 'http://localhost:8080/user/all';
+  private postUrl = 'http://localhost:8080/user/create';
 
   constructor(private http: HttpClient) { }
 
