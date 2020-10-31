@@ -6,14 +6,24 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Zip</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let facility of facilities | async ">
+            <td>{{facility.id}}</td>
             <td>{{facility.name}}</td>
             <td>{{facility.address}}</td>
+            <td>{{facility.city}}</td>
+            <td>{{facility.state}}</td>
+            <td>{{facility.country}}</td>
+            <td>{{facility.zip}}</td>
         </tr>
     </tbody>
 </table>
@@ -23,7 +33,7 @@
 <div class="modal fade" id="facilityModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form>
+            <form (ngSubmit)="onSubmit()">
             <!-- Modal Header -->
             <div class="modal-header">
                 <h3 class="modal-title">Add Facility</h3>
@@ -36,54 +46,54 @@
                 <div class="row  mb-2">
                     <div class="col-lg-2">Name</div>
                     <div class="col-lg-4">
-                        <input type="email" class="form-control input-sm" placeholder="Enter name" id="facilityName" />
+                        <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="facility.name" name="name" id="facName" />
                     </div>
                     <div class="col-lg-2">Phone</div>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="Enter phone" id="phoneNo" />
+                        <input type="number" class="form-control" placeholder="Enter phone" [(ngModel)]="facility.phone" name="phone" id="facPhoneNo" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">Address</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="address" id="facilityName" />
+                        <input type="text" class="form-control" placeholder="address" [(ngModel)]="facility.address" name="address" id="facAddress" />
                     </div>
                     <div class="col-lg-2">Zip</div>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="Zip code" id="zip" />
+                        <input type="number" class="form-control" placeholder="Zip code" [(ngModel)]="facility.zip" name="zip" id="facZip" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">City</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="city" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="city" [(ngModel)]="facility.city" name="city" id="facCity" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">State</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="state" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="state" [(ngModel)]="facility.state" name="state" id="facState" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">Country</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="country" id="facilityName" />
+                        <input type="text" class="form-control input-sm" placeholder="country" [(ngModel)]="facility.country" name="country" id="facCountry" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">Website</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="website" id="website" />
+                        <input type="text" class="form-control input-sm" placeholder="website" [(ngModel)]="facility.website" name="website" id="facWebsite" />
                     </div>
                     <div class="col-lg-2">Email</div>
                     <div class="col-lg-4">
-                        <input type="email" class="form-control" placeholder="email" id="email" />
+                        <input type="email" class="form-control" placeholder="email" [(ngModel)]="facility.email" name="email" id="facEmail" />
                     </div>
                 </div>
 
@@ -92,7 +102,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 * Required
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </form>

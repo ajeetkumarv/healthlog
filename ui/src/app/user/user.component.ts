@@ -12,6 +12,8 @@ import { User } from '../User';
 export class UserComponent implements OnInit {
 
   users : Observable<User[]>
+  user = new User();
+  submitted = false;
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -21,6 +23,21 @@ export class UserComponent implements OnInit {
 
   reloadData() {
     this.users = this.userService.getUsers();
+  }
+
+  save() {
+    this.userService.createUser(this.user)
+    .subscribe(data => console.log(data), error => console.log(error))
+    this.gotoUserList();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
+  gotoUserList() {
+    this.router.navigate(['/user'])
   }
 
 }

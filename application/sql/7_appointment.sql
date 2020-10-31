@@ -4,7 +4,7 @@ create table appointment
     appointDate date,
     appointTime time,
     patientId int unsigned,
-    facilityId int unsigned,
+    facilityId integer,
     providerId int unsigned,
     speciality varchar(30),
     

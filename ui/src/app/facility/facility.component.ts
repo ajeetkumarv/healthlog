@@ -12,6 +12,8 @@ import { FacilityService } from '../service/facility.service';
 export class FacilityComponent implements OnInit {
 
   facilities : Observable<Facility[]>
+  facility = new Facility();
+	submitted = false;
 
   constructor(private facilityService: FacilityService, private router: Router) {}
 
@@ -20,7 +22,29 @@ export class FacilityComponent implements OnInit {
   }
 
   reloadData() {
+    console.log('reloadData() method called');
     this.facilities = this.facilityService.getFacilities();
   }
+
+  save() {
+    console.log('save() method called');
+
+    console.log('>>> Received:' + this.facility.address + ' ' + this.facility.name + ' ' + this.facility.phone)
+
+		this.facilityService.createFacility(this.facility)
+		.subscribe(data => console.log(data), error => console.log(error));
+		this.facility = new Facility();
+		this.gotoFacilityList();
+	}
+	
+	onSubmit() {
+    console.log('onSubmit() method called');
+		this.submitted = true;
+		this.save();
+	}
+
+  gotoFacilityList() {
+		this.router.navigate(['/facility'])
+	}
 
 }

@@ -14,12 +14,12 @@
         </tr>
     </thead>
         <tr *ngFor="let user of users | async">
-            <td>{{user.username}</td>
-            <td>{{user.phone}</td>
-            <td>{{user.facility}</td>
-            <td>{{user.speciality}</td>
-            <td>{{user.role}</td>
-            <td>{{user.licenceNo}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.contactNo}}</td>
+            <td>{{user.facilityId}}</td>
+            <td>{{user.speciality}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.licenceNumber}}</td>
         </tr>
     <tbody>
     </tbody>
@@ -29,7 +29,7 @@
 <div class="modal fade" id="userModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form>
+            <form (ngSubmit)="onSubmit()">
             <!-- Modal Header -->
             <div class="modal-header">
                 <h3 class="modal-title">Add User</h3>
@@ -42,33 +42,33 @@
                 <div class="row  mb-2">
                     <div class="col-lg-2">Username</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="username" id="username" />
+                        <input type="text" class="form-control input-sm" placeholder="username" [(ngModel)]="user.username" name="username" id="username" />
                     </div>
                     <div class="col-lg-2">Phone</div>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" placeholder="phone" id="phoneNo" />
+                        <input type="number" class="form-control" placeholder="phone" [(ngModel)]="user.contactNo" name="contactNo" id="contactNo" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">Facility</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="facility" id="facility" />
+                        <input type="text" class="form-control input-sm" placeholder="facility" [(ngModel)]="user.facilityId" name="facilityId" id="userFacilityId" />
                     </div>
                     <div class="col-lg-2">Speciality</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="speciality" id="speciality" />
+                        <input type="text" class="form-control input-sm" placeholder="speciality" [(ngModel)]="user.speciality" name="speciality" id="speciality" />
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-lg-2">Licence No</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="license" id="licence" />
+                        <input type="text" class="form-control input-sm" placeholder="license" [(ngModel)]="user.licenceNumber" name="licence" id="licence" />
                     </div>
                     <div class="col-lg-2">Role</div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control input-sm" placeholder="role" id="role" />
+                        <input type="text" class="form-control input-sm" placeholder="role" [(ngModel)]="user.role" name="role" id="role" />
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 * Required
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </form>

@@ -31,14 +31,14 @@ FullCalendarModule.registerPlugins([
     AddPatientComponent,
     PatientDetailComponent,
     PatientlistComponent,
-	CalendarComponent,
-	FacilityComponent,
-	UserComponent,
-	AddrBookComponent
+    CalendarComponent,
+    FacilityComponent,
+    UserComponent,
+    AddrBookComponent
   ],
   imports: [
     BrowserModule,
-	FullCalendarModule,
+	  FullCalendarModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule

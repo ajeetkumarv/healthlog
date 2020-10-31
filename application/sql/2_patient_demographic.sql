@@ -6,7 +6,7 @@ create table patient_demographic
     lastName varchar(20) not null,
     gender varchar(10),
     contactNo varchar(12),
-    facilityId int unsigned,
+    facilityId integer,
     dob datetime,
     socialId varchar(15),
     created timestamp,

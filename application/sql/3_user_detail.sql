@@ -1,6 +1,6 @@
-create table user
+create table user_detail
 (
-	id int unsigned,
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
     username varchar(20) not null unique,
     contactNo varchar(12),
     facilityId int unsigned,
@@ -8,7 +8,5 @@ create table user
     role varchar(20),
     speciality varchar(50),
     created timestamp,
-    
-    primary key(id),
     foreign key (id) references facility(id)
 );

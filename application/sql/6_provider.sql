@@ -4,8 +4,8 @@ create table provider
     serviceDate date,
     serviceTime time,
     category varchar(30),
-    userId int unsigned,
+    userId integer,
     
     primary key(id),
-    foreign key(userId) references user(id)
+    foreign key(userId) references user_detail(id)
 );

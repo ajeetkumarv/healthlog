@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="facility")
 public class Facility {
 
 	@Id
@@ -17,6 +19,14 @@ public class Facility {
 	private String state;
 	private String country;
 	private Integer zip;
+	
+	
+	public Integer getZip() {
+		return zip;
+	}
+	public void setZip(Integer zip) {
+		this.zip = zip;
+	}
 	public Long getId() {
 		return id;
 	}

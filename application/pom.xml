@@ -15,18 +15,29 @@
 		<frontend-bundle-dir>${project.parent.basedir}/ui/dist/ui/</frontend-bundle-dir>
 		<start-class>com.healthlog.emr.Application</start-class>
 	</properties>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>com.healthlog</groupId>
-  		<artifactId>controller</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
-  
-  <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
-        <plugins>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.healthlog</groupId>
+			<artifactId>controller</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<plugins>
 
             <!-- Compile the project's source -->
             <plugin>

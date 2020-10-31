@@ -2,23 +2,40 @@ package com.healthlog.emr.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
+@Table(name= "user_detail")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String username;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	@Column (name="contactNo")
 	private String contactNo;
+	
+	@Column (name="facilityId")
 	private Integer facilityId;
+	@Column (name="licenceNumber")
 	private String licenceNumber;
 	private String role;
 	private String speciality;
+	
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private LocalDateTime created;
 	public Integer getId() {
 		return id;
