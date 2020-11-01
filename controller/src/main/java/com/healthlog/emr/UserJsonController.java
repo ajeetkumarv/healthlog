@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.healthlog.emr.model.Facility;
 import com.healthlog.emr.model.User;
 
 @RestController
@@ -22,6 +23,8 @@ public class UserJsonController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private FacilityRepository facilityRepository;
 	/**
 	 * Fetches all facilities
 	 * @return
@@ -38,7 +41,8 @@ public class UserJsonController {
 	
 	@PostMapping("/create")
 	public User createUser(@Valid @RequestBody User user) {
-		System.out.println(" >>>>>> " + user.getFacilityId());
+		Facility f = facilityRepository.findById(1L);
+		user.setFacility(f);
 		return userRepository.save(user);
 	}
 

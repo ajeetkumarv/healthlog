@@ -2,11 +2,14 @@ package com.healthlog.emr.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -28,8 +31,20 @@ public class User {
 	@Column (name="contactNo")
 	private String contactNo;
 	
-	@Column (name="facilityId")
-	private Integer facilityId;
+	
+	//@Column (name="facilityId") private Integer facilityId;
+	 
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "facilityId", referencedColumnName = "id")
+    private Facility facility;
+	
+	public Facility getFacility() {
+		return facility;
+	}
+	public void setFacility(Facility facility) {
+		this.facility = facility;
+	}
 	@Column (name="licenceNumber")
 	private String licenceNumber;
 	private String role;
@@ -49,12 +64,12 @@ public class User {
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
-	public Integer getFacilityId() {
-		return facilityId;
-	}
-	public void setFacilityId(Integer facilityId) {
-		this.facilityId = facilityId;
-	}
+//	public Integer getFacilityId() {
+//		return facilityId;
+//	}
+//	public void setFacilityId(Integer facilityId) {
+//		this.facilityId = facilityId;
+//	}
 	public String getLicenceNumber() {
 		return licenceNumber;
 	}
