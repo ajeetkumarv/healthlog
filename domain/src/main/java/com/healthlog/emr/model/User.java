@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,7 +21,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private String username;
 	public String getUsername() {
 		return username;
@@ -30,10 +31,6 @@ public class User {
 	}
 	@Column (name="contactNo")
 	private String contactNo;
-	
-	
-	//@Column (name="facilityId") private Integer facilityId;
-	 
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "facilityId", referencedColumnName = "id")
@@ -52,10 +49,10 @@ public class User {
 	
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private LocalDateTime created;
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getContactNo() {
@@ -64,12 +61,7 @@ public class User {
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
-//	public Integer getFacilityId() {
-//		return facilityId;
-//	}
-//	public void setFacilityId(Integer facilityId) {
-//		this.facilityId = facilityId;
-//	}
+
 	public String getLicenceNumber() {
 		return licenceNumber;
 	}

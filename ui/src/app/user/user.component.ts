@@ -15,6 +15,8 @@ export class UserComponent implements OnInit {
   user = new User();
   submitted = false;
 
+  facilities = [ {id: 1, name:'Facility1'}, {id: 2, name:'Facility2'}]
+
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
